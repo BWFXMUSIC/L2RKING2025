@@ -2,7 +2,7 @@
 
 
 <h2 align="center">
-    ──「 ˹ᴠᴇɴᴏᴍ˼ ✘ ˹ᴍᴜsɪᴄ˼ 」──
+    ──「 L2R ✘ ˹ᴍᴜsɪᴄ˼ 」──
 
 
 <h3 align="center">
