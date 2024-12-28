@@ -30,6 +30,8 @@ async def join_watcher(_, message):
                 f"❣️ ɢʀᴏᴜᴘ ʟɪɴᴋ ➥ {link}\n"
                 
                 f"🍒 ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs ➥ {count}\n\n"
+
+                f"🪫ʙᴏᴛ ᴏᴡɴᴇʀ @L2R_KING ♦️"
                 
                 f"🍷 ᴀᴅᴅᴇᴅ ʙʏ ➥ {message.from_user.mention}"
             )
@@ -37,7 +39,7 @@ async def join_watcher(_, message):
                 LOGGER_ID,
                 text=msg,
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton(f"sᴇᴇ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɢʀᴏᴜᴘ", url=f"{link}" if link != "Unable to fetch invite link (Insufficient Permissions)" else "https://t.me")]
+                    [InlineKeyboardButton(f"⛩️𝐀ᴅᴅ ᴍᴜsɪᴄ 𝐁σт⛩️", url=f"{link}" if link != "Unable to fetch invite link (Insufficient Permissions)" else "https://t.me")]
                 ])
             )
 
@@ -50,19 +52,16 @@ async def on_left_chat_member(_, message: Message):
         chat_id = message.chat.id
         left = (
             f"😔 <b>ʙᴏᴛ #ʟᴇғᴛ_ɢʀᴏᴜᴘ ʙʏ ᴀ ᴄʜᴜᴛɪʏᴀ</b> \n\n"
-            
             f"♦️ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ➥ {title}\n\n"
-            
             f"💬 ɢʀᴏᴜᴘ ɪᴅ ➥ {chat_id}\n\n"
-            
             f"💨 ʙᴏᴛ ʀᴇᴍᴏᴠᴇᴅ ʙʏ ➥ {remove_by}\n\n"
-            
             f"✨ ʙᴏᴛ ɴᴀᴍᴇ ➥ ˹ 𝐌𝗲𝗻𝘁𝗮𝗹 𝐌𝘂𝘀𝗶𝙘™ ❤️゙"
+            f"🪫ʙᴏᴛ ᴏᴡɴᴇʀ @L2R_KING ♦️"
         )
         await app.send_message(
             LOGGER_ID,
             text=left,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton(f"ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/{app.username}?startgroup=true")]
+                [InlineKeyboardButton(f"⛩️𝐍ᴏ 𝐀ᴅᴅ ᴍᴜsɪᴄ 𝐁σт⛩️", url=f"https://t.me/{app.username}?startgroup=true")]
             ])
         )
