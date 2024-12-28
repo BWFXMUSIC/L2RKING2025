@@ -1,4 +1,5 @@
 
+
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from VenomX import app
@@ -18,13 +19,19 @@ async def join_watcher(_, message):
         if members.id == app.id:
             count = await app.get_chat_members_count(chat.id)
             msg = (
-                f"❖ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ #ɴᴇᴡ_ɢʀᴏᴜᴘ \n\n"
-                f"● ɢʀᴏᴜᴘ ɴᴀᴍᴇ ➥ {message.chat.title}\n"
-                f"● ɢʀᴏᴜᴘ ɪᴅ ➥ {message.chat.id}\n"
-                f"● ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ➥ @{message.chat.username}\n"
-                f"● ɢʀᴏᴜᴘ ʟɪɴᴋ ➥ {link}\n"
-                f"● ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs ➥ {count}\n\n"
-                f"❖ ᴀᴅᴅᴇᴅ ʙʏ ➥ {message.from_user.mention}"
+                f"🍃 ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ #ɴᴇᴡ_ɢʀᴏᴜᴘ \n\n"
+                
+                f"🌷 ɢʀᴏᴜᴘ ɴᴀᴍᴇ ➥ {message.chat.title}\n"
+                
+                f"🦋 ɢʀᴏᴜᴘ ɪᴅ ➥ {message.chat.id}\n"
+                
+                f"👻 ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ➥ @{message.chat.username}\n"
+                
+                f"❣️ ɢʀᴏᴜᴘ ʟɪɴᴋ ➥ {link}\n"
+                
+                f"🍒 ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs ➥ {count}\n\n"
+                
+                f"🍷 ᴀᴅᴅᴇᴅ ʙʏ ➥ {message.from_user.mention}"
             )
             await app.send_message(
                 LOGGER_ID,
@@ -42,11 +49,15 @@ async def on_left_chat_member(_, message: Message):
         username = f"@{message.chat.username}" if message.chat.username else "𝐏ʀɪᴠᴀᴛᴇ 𝐂ʜᴀᴛ"
         chat_id = message.chat.id
         left = (
-            f"❖ <b>ʙᴏᴛ #ʟᴇғᴛ_ɢʀᴏᴜᴘ ʙʏ ᴀ ᴄʜᴜᴛɪʏᴀ</b> \n\n"
-            f"● ɢʀᴏᴜᴘ ɴᴀᴍᴇ ➥ {title}\n\n"
-            f"● ɢʀᴏᴜᴘ ɪᴅ ➥ {chat_id}\n\n"
-            f"● ʙᴏᴛ ʀᴇᴍᴏᴠᴇᴅ ʙʏ ➥ {remove_by}\n\n"
-            f"❖ ʙᴏᴛ ɴᴀᴍᴇ ➥ ˹ ᴛᴀɴᴜ ꭙ ᴍᴜsɪᴄ™ ♡゙"
+            f"😔 <b>ʙᴏᴛ #ʟᴇғᴛ_ɢʀᴏᴜᴘ ʙʏ ᴀ ᴄʜᴜᴛɪʏᴀ</b> \n\n"
+            
+            f"♦️ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ➥ {title}\n\n"
+            
+            f"💬 ɢʀᴏᴜᴘ ɪᴅ ➥ {chat_id}\n\n"
+            
+            f"💨 ʙᴏᴛ ʀᴇᴍᴏᴠᴇᴅ ʙʏ ➥ {remove_by}\n\n"
+            
+            f"✨ ʙᴏᴛ ɴᴀᴍᴇ ➥ ˹ 𝐌𝗲𝗻𝘁𝗮𝗹 𝐌𝘂𝘀𝗶𝙘™ ❤️゙"
         )
         await app.send_message(
             LOGGER_ID,
