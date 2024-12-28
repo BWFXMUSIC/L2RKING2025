@@ -30,10 +30,10 @@ async def join_watcher(_, message):
                 f"❣️ ɢʀᴏᴜᴘ ʟɪɴᴋ ➥ {link}\n"
                 
                 f"🍒 ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs ➥ {count}\n\n"
-
-                f"🪫ʙᴏᴛ ᴏᴡɴᴇʀ @L2R_KING ♦️"
                 
                 f"🍷 ᴀᴅᴅᴇᴅ ʙʏ ➥ {message.from_user.mention}"
+
+                f"🪫ʙᴏᴛ ᴏᴡɴᴇʀ @L2R_KING ♦️"
             )
             await app.send_message(
                 LOGGER_ID,
