@@ -1,15 +1,47 @@
-import asyncio
+import asyncio  ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
 from datetime import datetime
 
 from pyrogram.enums import ChatType
 
-import config
+import config ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
 from VenomX import app
 from VenomX.core.call import Ayush, autoend
 from VenomX.utils.database import get_client, is_active_chat, is_autoend
 
 
+async def auto_leave():    ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
+    if config.AUTO_LEAVING_ASSISTANT:
+        while not await asyncio.sleep(500):
+            from VenomX.core.userbot import assistants
 
+            for num in assistants:
+                client = await get_client(num)
+                left = 0
+                try:
+                    async for i in client.get_dialogs():
+                        if i.chat.type in [
+                            ChatType.SUPERGROUP,
+                            ChatType.GROUP,
+                            ChatType.CHANNEL,
+                        ]:
+                            if (
+                                i.chat.id != config.LOGGER_ID
+                                and i.chat.id != -1001465277194
+                                and i.chat.id != -1002120144597
+                            ):
+                                if left == 20:
+                                    continue
+                                if not await is_active_chat(i.chat.id):
+                                    try:
+                                        await client.leave_chat(i.chat.id)
+                                        left += 1
+                                    except:
+                                        continue
+                except:
+                    pass
+
+
+asyncio.create_task(auto_leave())
 
 
 async def auto_end():
