@@ -11,7 +11,7 @@ from VenomX.utils.database import get_client, is_active_chat, is_autoend
 
 async def auto_leave():    ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
     if config.AUTO_LEAVING_ASSISTANT:
-        while not await asyncio.sleep(500):
+        while not await asyncio.sleep(5000):
             from VenomX.core.userbot import assistants
 
             for num in assistants:
