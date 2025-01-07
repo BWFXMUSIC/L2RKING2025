@@ -1,17 +1,17 @@
-import asyncio  ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
+import asyncio  
 from datetime import datetime
 
 from pyrogram.enums import ChatType
 
-import config ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
+import config 
 from VenomX import app
 from VenomX.core.call import Ayush, autoend
 from VenomX.utils.database import get_client, is_active_chat, is_autoend
 
 
-async def auto_leave():    ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
+async def auto_leave():    
     if config.AUTO_LEAVING_ASSISTANT:
-        while not await asyncio.sleep(9000):
+        while not await asyncio.sleep(90000):
             from VenomX.core.userbot import assistants
 
             for num in assistants:
