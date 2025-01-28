@@ -10,9 +10,9 @@ from VenomX.utils.database import get_client, is_active_chat, is_autoend
 
 
 async def auto_leave():
-    if config.AUTO_LEAVING_ASSISTANT = str(True):
+    if config.AUTO_LEAVING_ASSISTANT == str(True):
         while not await asyncio.sleep(
-            config.AUTO_LEAVING_ASSISTANT:
+            config.AUTO_LEAVE_ASSISTANT_TIME
         ):
             from VenomX.core.userbot import assistants
 
