@@ -1,45 +1,39 @@
-import asyncio
+import asyncio  ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
 from datetime import datetime
 
 from pyrogram.enums import ChatType
 
-import config
+import config ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
 from VenomX import app
 from VenomX.core.call import Ayush, autoend
 from VenomX.utils.database import get_client, is_active_chat, is_autoend
 
 
-async def auto_leave():
-    if config.AUTO_LEAVING_ASSISTANT == str(True):
-        while not await asyncio.sleep(
-            config.AUTO_LEAVE_ASSISTANT_TIME
-        ):
+async def auto_leave():    ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
+    if config.AUTO_LEAVING_ASSISTANT:
+        while not await asyncio.sleep(9000):
             from VenomX.core.userbot import assistants
 
             for num in assistants:
                 client = await get_client(num)
                 left = 0
                 try:
-                    async for i in client.iter_dialogs():
-                        chat_type = i.chat.type
-                        if chat_type in [
-                            "supergroup",
-                            "group",
-                            "channel",
+                    async for i in client.get_dialogs():
+                        if i.chat.type in [
+                            ChatType.SUPERGROUP,
+                            ChatType.GROUP,
+                            ChatType.CHANNEL,
                         ]:
-                            chat_id = i.chat.id
                             if (
-                                chat_id != config.LOGGER_ID
-                                and i.chat.id != -1001919135283
-                                and i.chat.id != -1001841879487
+                                i.chat.id != config.LOGGER_ID
+                                and i.chat.id != -1001465277194
+                                and i.chat.id != -1002120144597
                             ):
                                 if left == 20:
                                     continue
-                                if not await is_active_chat(chat_id):
+                                if not await is_active_chat(i.chat.id):
                                     try:
-                                        await client.leave_chat(
-                                            chat_id
-                                        )
+                                        await client.leave_chat(i.chat.id)
                                         left += 1
                                     except:
                                         continue
@@ -50,9 +44,10 @@ async def auto_leave():
 asyncio.create_task(auto_leave())
 
 
-async def auto_end():
+async def auto_end():    ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
     while not await asyncio.sleep(5):
-        if not await is_autoend():
+        ender = await is_autoend()
+        if not ender:
             continue
         for chat_id in autoend:
             timer = autoend.get(chat_id)
@@ -73,7 +68,7 @@ async def auto_end():
                         "» ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ ɴᴏ ᴏɴᴇ ᴡᴀs ʟɪsᴛᴇɴɪɴɢ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
                     )
                 except:
-                    continue
+                    continue                                 ### ❖ ➥ 𝗕𝐖𝗙 𝗠𝗨𝗦𝗜𝗖™🇮🇳
 
 
 asyncio.create_task(auto_end())
