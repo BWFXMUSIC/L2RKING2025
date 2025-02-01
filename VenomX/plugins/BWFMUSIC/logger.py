@@ -1,8 +1,7 @@
 
-
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-from VenomX import app
+from L2RMUSIC import app
 from config import LOGGER_ID
 
 @app.on_message(filters.new_chat_members, group=2)
